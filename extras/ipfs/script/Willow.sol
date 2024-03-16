@@ -16,7 +16,7 @@ contract WillowIPC {
     int256 public num_response;
     bytes public buffer;
 
-    function execute() public  {
+    function execute() public returns (bytes memory) {
         bytes memory se_request = _serializeRandomXParameters();
 
         (num_response, raw_response) = Actor.callByID(
@@ -27,6 +27,8 @@ contract WillowIPC {
             0,
             false // don't mutate
         );
+
+        return raw_response;
     }
 
     function _serializeRandomXParameters() private returns (bytes memory) {
