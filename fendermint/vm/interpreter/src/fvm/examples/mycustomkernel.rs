@@ -19,6 +19,8 @@ use fvm_shared::{address::Address, econ::TokenAmount, ActorID, MethodNum};
 use ambassador::Delegate;
 use cid::Cid;
 
+use reqwest::blocking::get;
+
 // we define a single custom syscall which simply doubles the input
 pub trait CustomKernel: Kernel {    fn my_custom_syscall(&self) -> Result<u64>;
 }
@@ -44,16 +46,19 @@ where
     CustomKernelImpl<C>: Kernel,
 {
     fn my_custom_syscall(&self) -> Result<u64> {
-        // Here we have access to the Kernel structure and can call
-        // any of its methods, send messages, etc.
+        // currently this is not deterministic since sometimes the request is rate limited
+        
+        let response = match get("https://ipfs.io/ipfs/Qmbi6GYikeZYxdNWsLsZY75xgB9Uuy55zZdMT2hedCxGSr") {
+            Ok(resp) => resp,
+            Err(_) => return Ok(0), // Restituisci un valore di default (0) in caso di errore
+        };
 
-        // We can also run an external program, link to any rust library
-        // access the network, etc.
-
-        // In this example, lets access the file system and return
-        // the number of paths in /
-        let paths = std::fs::read_dir("/").unwrap();
-        Ok(paths.count() as u64)
+        let body = match response.bytes() {
+            Ok(bytes) => bytes,
+            Err(_) => return Ok(0), // Restituisci un valore di default (0) in caso di errore
+        };
+        
+        Ok(body.len() as u64)
     }
 }
 
