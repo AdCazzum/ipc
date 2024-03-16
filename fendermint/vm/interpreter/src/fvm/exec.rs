@@ -135,6 +135,8 @@ where
 
             let val: u64 = apply_ret.msg_receipt.return_data.deserialize().unwrap();
             println!("customsyscall actor returned: {}", val);
+            println!("customsyscall actor returned: {}", system::SYSTEM_ACTOR_ADDR);
+            println!("customsyscall actor returned: {}", fendermint_actor_customsyscall::Method::Invoke as u64);
         }
 
         let ret = FvmApplyRet {
