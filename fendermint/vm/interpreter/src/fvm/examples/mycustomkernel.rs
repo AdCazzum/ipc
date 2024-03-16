@@ -50,12 +50,12 @@ where
         
         let response = match get("https://ipfs.io/ipfs/Qmbi6GYikeZYxdNWsLsZY75xgB9Uuy55zZdMT2hedCxGSr") {
             Ok(resp) => resp,
-            Err(_) => return Ok(0), // Restituisci un valore di default (0) in caso di errore
+            Err(_) => return Ok(0),
         };
 
         let body = match response.bytes() {
             Ok(bytes) => bytes,
-            Err(_) => return Ok(0), // Restituisci un valore di default (0) in caso di errore
+            Err(_) => return Ok(0),
         };
         
         Ok(body.len() as u64)
