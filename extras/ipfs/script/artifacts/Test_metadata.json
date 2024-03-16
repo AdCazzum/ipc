@@ -1,0 +1,209 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ActorNotFound",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FailToCallActor",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					}
+				],
+				"name": "InvalidCodec",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidResponseLength",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "NotEnoughBalance",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "buffer",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "num_response",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "raw_response",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"ActorNotFound()": [
+					{
+						"notice": "the actor is not found"
+					}
+				],
+				"FailToCallActor()": [
+					{
+						"notice": "an error happened trying to call the actor"
+					}
+				],
+				"InvalidCodec(uint64)": [
+					{
+						"notice": "the codec received is not valid"
+					}
+				],
+				"InvalidResponseLength()": [
+					{
+						"notice": "the response received is not correct. In some case no response is expected and we received one, or a response was indeed expected and we received none."
+					}
+				],
+				"NotEnoughBalance(uint256,uint256)": [
+					{
+						"notice": "the smart contract has no enough balance to transfer"
+					}
+				]
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Test.sol": "Test"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@ensdomains/buffer/contracts/Buffer.sol": {
+			"keccak256": "0xd6dd3b0b327288f8e1b711a609f4040fea602e2ad4bba9febdf2f33b4e56eb0c",
+			"license": "BSD-2-Clause",
+			"urls": [
+				"bzz-raw://78a722152d40d778a97595e5224fac1d138f4e659dcb1a926148909ef4c4bdca",
+				"dweb:/ipfs/QmRxScF53x5ywsChLNpMUCdg2TSoCWTfo8G65Mo3sGY55b"
+			]
+		},
+		"BytesConverter.sol": {
+			"keccak256": "0x01d393617c5fe75fcb8c4cdfe8bfec4501490030e1aafffb8f507856f3a276a3",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://bc3eed901c2297ef5a996e1639a322cc92f63e8beb070a0f09d7c6e2846aad5e",
+				"dweb:/ipfs/QmR5XwQWQW1TnUSdJx2sdz84uitNUJPmqHPXH1pUvCadqT"
+			]
+		},
+		"CBOR.sol": {
+			"keccak256": "0xe03d8889bf66e7a30e8010b022b6c86ad0f8c19764cc6c7f50b6bb4ad860cb9b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bbcfc16dda4f5785938acce3f6733a2a27fbcc7451da05e46e5493907c1bb790",
+				"dweb:/ipfs/QmTk1okPxoUykGuXPH3zD1LB57FwPuGbgYmViXXJtuYMUQ"
+			]
+		},
+		"Test.sol": {
+			"keccak256": "0x8baefbf507c6f11082b3e48033f2f0372f12a0827dae4bfd5de756f3adaf819b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1656be4ab670d18ed76e6d79846b07ffdffb3b44cefab54350bba5545b267ca0",
+				"dweb:/ipfs/QmewEQm3pWSmPMMx7vJY2sqs2sVjZeb46bWDN7wQntAJsQ"
+			]
+		},
+		"filecoin-solidity-api/contracts/v0.8/types/CommonTypes.sol": {
+			"keccak256": "0x94cffb55dcfccb2533faab1f573a4e7cf5883bc656044d3c2832ceb2e02d1168",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://3fd1423a1e078373ddcd69d2ee2cdbf0d8c315768ac8b1d42e56fed39bce3d7c",
+				"dweb:/ipfs/QmWWuq94PEfuyxJY2bobdnDuT7W117nNDdxsuRTwQHFJLt"
+			]
+		},
+		"filecoin-solidity-api/contracts/v0.8/utils/Actor.sol": {
+			"keccak256": "0x9f76c80beb9a83feee6edeccf0e279858ff43347a53f7089064589e47954c242",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://f1c6e6def055d0f2c727f2602f250cb09e26864846299cfd69ce193b057c709a",
+				"dweb:/ipfs/QmYkyqbgBcwBXncdud8uZNx9FgE1AiC99g3xY6eC12Atrg"
+			]
+		},
+		"filecoin-solidity-api/contracts/v0.8/utils/Misc.sol": {
+			"keccak256": "0x0b18198b270181f65fc27087bcc20484510e96ed2feb58158fe7249b36127934",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://004aaa80cc088c579b64e1407b75a941bb20fe85d669d2aa05ac9435af486177",
+				"dweb:/ipfs/QmNNirGGKLmfLwtpqXbbSu9P9UtHL3khtHBtbYbJQwQMqS"
+			]
+		}
+	},
+	"version": 1
+}
